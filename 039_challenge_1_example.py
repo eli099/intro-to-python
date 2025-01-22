@@ -84,6 +84,7 @@ def format_graph(number_frequency):
 
 # Now let's use it!
 print(generate_frequency_graph(example_numbers))
+print(type(generate_frequency_graph(example_numbers)))
 
 # @TASK Run this file to see the result.
 

@@ -30,7 +30,42 @@ print("")
 print("Function: report_long_words")
 
 def report_long_words(words):
-  pass
+    print("words ->", words)
+    # function to filter out words without dashes & longer than 10 characters
+    whole = remove_dashed_words(words)
+    print("whole ->", whole)
+    # mapping function to shorten words longer than 15 charcters & add elipses
+    shorter = shorten_words(whole)
+    print("shorter ->", shorter)
+    # return "These words are quite long: ...""
+    print("These words are quite long:" + ", ".join(shorter))
+    return "These words are quite long: " + ", ".join(shorter)
+    
+# function to filter out words without dashes & longer than 10 characters
+def remove_dashed_words(words):
+    whole_words = []
+    for word in words:
+        if "-" not in word and len(word) > 10:
+            print(f"{word} is more than 10 characters \n")
+            whole_words.append(word)
+        else:
+            print(f"'{word}' is 10 characters or less or contains dashes \n")
+    print("whole_words 1 ->", whole_words)
+    return whole_words
+
+# mapping function to shorten words longer than 15 charcters & add elipses
+def shorten_words(whole_words):
+    short_words = []
+    for word in whole_words:
+        if len(word) > 15:
+            shortened = word[0:15] + "..."
+            short_words.append(shortened)
+        else:
+            short_words.append(word)
+    print("short_words ->", short_words)
+    return short_words
+            
+            
 
 check_that_these_are_equal(
   report_long_words([
