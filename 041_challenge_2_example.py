@@ -1,4 +1,4 @@
-# Video alternative: https://vimeo.com/954334009/67af9910fc#t=0
+# Video alternative: https://vimeo.com/954334009/67af9910mfc#t=0
 
 # Nice work on that last one! You might well want to
 # consider taking the assessment at this point.
@@ -45,6 +45,7 @@ def print_board(board):
   formatted_rows = []
   for row in board:
     formatted_rows.append(" ".join(row))
+    print("formatted_rows ->", formatted_rows)
   grid = "\n".join(formatted_rows)
   return grid
 
@@ -80,6 +81,8 @@ def get_cells(board, coord_1, coord_2, coord_3):
     board[coord_2[0]][coord_2[1]],
     board[coord_3[0]][coord_3[1]]
   ]
+  
+
 
 # This function will check if the group is fully placed
 # with player marks, no empty spaces.
@@ -143,11 +146,62 @@ def play_game():
       player = "X"
   print(print_board(board))
   print("Game over!")
+  
+# ! testing
+# print("testing ->", get_cells(groups_to_check, (0, 1), (2, 1), (1, 2)))
+# print("testing ->", groups_to_check)
+
+# how many times does 4 appear
+# number_string = "283479131515574857242454150695950829533116861727855889075098381754637464939319255060400927701671139009848824012858361603563707660104710181942955596198946767837449448255379774726847104047534646208046684259069491293313677028989152104752162056966024058038150193511253382430035587640247496473263914199272604269922796"
+
+# sum = 0
+# new = []
+
+# for number in number_string:
+#     if number == '4':
+#         sum += 1
+#         print(sum)
+#     else:
+#         new.append(number)
+#         print("new_string ->", new)
+        
+# new_string = "".join(new)
+# print("the sum ->", sum)
+# print("new string ->", new_string)
+
+def StringChallenge(num):
+
+  # code goes here
+  print("num ->", num)
+  hours_and_minutes = []
+
+  # how many 60s go into num
+  hours = int(num / 60)
+  print("hours ->", hours)
+
+  hours_and_minutes.append(str(hours))
+
+  # what's left over
+  minutes = num % 60
+  print("minutes ->", minutes)
+
+  hours_and_minutes.append(str(minutes))
+
+  print("hours_and_minutes ->", hours_and_minutes)
+
+  # print(":".join(hours_and_minutes))
+  num = ":".join(hours_and_minutes)
+  return str(num)
+
+# keep this function call here 
+print(StringChallenge(126))
+
+
 
 # And try it out:
 
-print("Game time!")
-play_game()
+# print("Game time!")
+# play_game()
 
 # @TASK Run this file to play the game.
 
